@@ -4,6 +4,8 @@ module Lib
 
 import Data.Char
 import Control.Monad
+import File
+import System.Environment
 
 someFunc :: IO ()
 someFunc = {- do
@@ -83,9 +85,14 @@ someFunc = {- do
             putStrLn "The colors that you associate with 1, 2, 3 and 4 are: "
             mapM putStrLn colors -}
 
-            do
+            {- do
             contents <- getContents
-            putStr (shortLinesOnly contents)
+            putStr (shortLinesOnly contents) -}
+
+            do
+                (command:args) <- getArgs
+                let (Just action) = lookup command dispatch
+                action args
 
 {- 柯里化 -}
 reverseWords :: String -> String

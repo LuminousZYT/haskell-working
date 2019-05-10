@@ -1,7 +1,6 @@
 module Main where
 
-import Lib hiding (someFunc)
-import File
+import Lib 
 
 main :: IO ()
 main = someFunc

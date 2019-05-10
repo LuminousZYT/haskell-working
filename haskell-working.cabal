@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 4c85245baace3e663558dd3ee70e0ee70304b159dfd76a33da21674ecd96d242
+-- hash: fd039d72b329efcdec5e3c7adf0abe84f6f46a34f5e2264d696829c426e57711
 
 name:           haskell-working
 version:        0.1.0.0
@@ -44,6 +44,8 @@ library
   build-depends:
       base
     , containers
+    , directory
+    , random
   default-language: Haskell2010
 
 executable haskell-working-exe
@@ -56,7 +58,9 @@ executable haskell-working-exe
   build-depends:
       base
     , containers
+    , directory
     , haskell-working
+    , random
   default-language: Haskell2010
 
 test-suite haskell-working-test
@@ -70,5 +74,7 @@ test-suite haskell-working-test
   build-depends:
       base
     , containers
+    , directory
     , haskell-working
+    , random
   default-language: Haskell2010
